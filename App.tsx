@@ -1,20 +1,15 @@
+import { View } from 'react-native';
+import { ToDoList } from './src/views/ToDoList';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { defaultStylesheets } from './src/stylesheets';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    return (
+        <>
+            <StatusBar style='auto' translucent networkActivityIndicatorVisible />
+            <View style={defaultStylesheets.mainView}>
+                <ToDoList />
+            </View>
+        </>
+    )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
